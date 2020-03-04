@@ -4,7 +4,7 @@
 # fan is connected to the relay
 #
 
-
+from datetime import datetime
 import RPi.GPIO as GPIO
 import time
 
@@ -27,6 +27,9 @@ def return_temp():
 	return tempC
 
 def fan_on():
+    now = datetime.now()
+    current_time = new.strftime("%H:%M:%S")
+    print("Time: " + str(current_time))
 	print("CPU temperature: " + str(return_temp()) + "C")
 	print("Fan on")
 	
